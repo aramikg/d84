@@ -1,0 +1,56 @@
+{% extends '../templates/base.html' %}
+
+{% block meta %}
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+{% endblock %}
+
+{% block content %}
+
+<h1>simple<span>web</span></h1>
+
+
+<ul class="panes">
+  <li class="green"></li>
+  <li class="cream"></li>
+  <li class="orange" ></li>
+  <li class="blood"></li>
+  <li class="red"></li>
+</ul>
+
+<button class="button add-new">+</button>
+
+<section class="site-info">
+
+
+
+{% for settings in site %}
+    {% for itemKey,itemVal in settings %}
+    {% if itemKey != "_id" %}
+      <div class="item">
+      <label for="{{ itemKey }}">{{ itemKey }}</label>
+      <input type="text" id="{{ itemKey }}" class="update" value="{{ itemVal }}">
+      <a class="remove hide" href="#">remove</a>
+      </div>
+    {% endif %}
+    {% endfor %}
+{% endfor %}
+
+
+<!--
+
+  <label for="site-name">name</label>
+  <input type="text" id="name" name="site-name" class="update">
+
+  <label for="site-description">descrption</label>
+  <input type="text" id="site-description" class="update">
+ -->
+</section>
+
+<div class="alert alert-success hide" role="alert">Your changes have been saved!</div>
+{% endblock %}

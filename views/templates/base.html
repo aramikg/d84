@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title%}{% endblock %}simpleweb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% block styles %}
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  {% endblock %}
+
+  {% block scripts %}
+  <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
+  {% endblock %}
+
+  {% block meta %}
+  {% endblock %}
+
+</head>
+<body>
+
+  <section class="content">
+    {% block content %}{% endblock %}
+  </section>
+
+</body>
+</html>
